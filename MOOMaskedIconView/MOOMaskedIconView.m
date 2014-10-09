@@ -944,8 +944,7 @@ CGImageRef CGImageCreateMaskFromCGImage(CGImageRef source, CGSize size)
 
 CGImageRef CGImageCreateMaskFromImageNamed(NSString *imageName, CGSize size)
 {
-    NSURL *imageURL = NSURLWithResourceNamed(imageName, nil);
-    UIImage *image = [UIImage imageWithContentsOfFile:[imageURL relativePath]];
+    UIImage *image = [UIImage imageNamed:imageName];
     return CGImageCreateMaskFromCGImage(image.CGImage, size);
 }
 
